@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codenames</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="title"></h1>
+      <div id="redScore" class="redScore"></div>
+      <div id="blueScore" class="blueScore"></div>
+      <div id="mainBlock" class="mainBlock">
+        <div id="redAssociationsField" class="redAssociationsField">
+          <div id="redAssociations" class="redAssociations"></div>
+          <textarea id="redAssociationsForm" class="redAssociationsForm"></textarea>
+        </div>
+        <div id="board" class="board"></div>
+        <div id="blueAssociationsField" class="blueAssociationsField">
+          <div id="blueAssociations" class="blueAssociations"></div>
+          <textarea id="blueAssociationsForm" class="blueAssociationsForm"></textarea>
+        </div>
+      </div>
+      <button id="start">Start Game</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="websocket.js"></script>
+    <script>
+      const role = window.location.hash.replace("#", "");
+      if (role === "master") {
+        socket.emit("chooseRole", "master");
+        document.title = "Master View";
+        document.getElementById("title").innerText = "Master Interface";
+        const script = document.createElement("script");
+        script.src = "master.js";
+        document.body.appendChild(script);
+      } else {
+        socket.emit("chooseRole", "player");
+        document.title = "TV View";
+        document.getElementById("redAssociationsForm").style.display = 'none';
+        document.getElementById("blueAssociationsForm").style.display = 'none';
+        document.getElementById("title").innerText = "TV Interface";
+        const script = document.createElement("script");
+        script.src = "tv.js";
+        document.body.appendChild(script);
+      }
+    </script>
+  </body>
+</html>

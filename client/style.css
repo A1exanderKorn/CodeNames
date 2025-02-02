@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #404040;
+}
+.mainBlock{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+  align-items: start;
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.redScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4%;
+  height: 60px;
+  background-color: #f28b82;
+}
+
+.blueScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 4%;
+  height: 60px;
+  background-color: #6ca4ff;
+}
+
+.redAssociationsField{
+  display: flex;
+  height: 100%;
+  width: 15%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fe9990;
+}
+.blueAssociationsField{
+  display: flex;
+  height: 100%;
+  width: 15%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #88b6ff;
+}
+
+.card {
+  width: 15%;
+  margin-bottom: 30px;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* padding: 20px; */
+  background-color: #ffffff;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  line-height: 80px;
+}
+
+.red {
+  background-color: #f28b82;
+  color: #000;
+}
+
+.blue {
+  background-color: #6ca4ff;
+  color: #000;
+}
+
+.black {
+  background-color: #212121;
+  color: #cfcfcf;
+}
+
+.white {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.unrevealed {
+  background-color: #c1c1c1;
+  color: #000;
+}
+.revealed {
+  opacity: 0.6;
+}
+
+
+/* стили от DeepSeek */
+.redAssociationsForm,
+.blueAssociationsForm {
+  width: 90%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.redAssociationsForm {
+  border-color: #f28b82;
+}
+
+.blueAssociationsForm {
+  border-color: #6ca4ff;
+}
+
+/* Стили для блоков redAssociations и blueAssociations */
+.redAssociations,
+.blueAssociations {
+  width: 100%;
+  height: calc(100% - 120px); /* Учитываем высоту textarea */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Стили для элементов с классом .association */
+.association {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.redAssociations .association {
+  border-left: 4px solid #f28b82;
+}
+
+.blueAssociations .association {
+  border-left: 4px solid #6ca4ff;
+}
+
+/* Дополнительные стили для redAssociationsField и blueAssociationsField */
+.redAssociationsField {
+  background-color: #fe9990;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blueAssociationsField {
+  background-color: #88b6ff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
