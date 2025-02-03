@@ -5,7 +5,36 @@ body {
   padding: 0;
   background-color: #404040;
 }
-.mainBlock{
+
+.title {
+  font-size: 32px;
+}
+
+.timer {
+  font-weight: bold;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 80px;
+  font-size: 32px;
+
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+.timerRed {
+  background: linear-gradient(45deg, #ff4c4c47, #cc00004b);
+  color: white;
+  box-shadow: 0 0 15px rgba(204, 0, 0, 0.5);
+}
+.timerBlue {
+  background: linear-gradient(45deg, #4c9aff38, #005fcc38);
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 95, 204, 0.5);
+}
+/* .redTimerText{
+  color:#000
+} */
+
+.mainBlock {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -53,7 +82,7 @@ body {
   background-color: #6ca4ff;
 }
 
-.redAssociationsField{
+.redAssociationsField {
   display: flex;
   height: 100%;
   width: 15%;
@@ -62,7 +91,7 @@ body {
   align-items: center;
   background-color: #fe9990;
 }
-.blueAssociationsField{
+.blueAssociationsField {
   display: flex;
   height: 100%;
   width: 15%;
@@ -114,9 +143,8 @@ body {
   color: #000;
 }
 .revealed {
-  opacity: 0.6;
+  opacity: 0.3;
 }
-
 
 /* стили от DeepSeek */
 .redAssociationsForm,

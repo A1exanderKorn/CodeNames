@@ -8,18 +8,24 @@
   </head>
   <body>
     <div id="app">
-      <h1 id="title"></h1>
+      <div id="title" class="title"></div>
       <div id="redScore" class="redScore"></div>
       <div id="blueScore" class="blueScore"></div>
       <div id="mainBlock" class="mainBlock">
         <div id="redAssociationsField" class="redAssociationsField">
           <div id="redAssociations" class="redAssociations"></div>
-          <textarea id="redAssociationsForm" class="redAssociationsForm"></textarea>
+          <textarea
+            id="redAssociationsForm"
+            class="redAssociationsForm"
+          ></textarea>
         </div>
         <div id="board" class="board"></div>
         <div id="blueAssociationsField" class="blueAssociationsField">
           <div id="blueAssociations" class="blueAssociations"></div>
-          <textarea id="blueAssociationsForm" class="blueAssociationsForm"></textarea>
+          <textarea
+            id="blueAssociationsForm"
+            class="blueAssociationsForm"
+          ></textarea>
         </div>
       </div>
       <button id="start">Start Game</button>
@@ -31,16 +37,14 @@
       const role = window.location.hash.replace("#", "");
       if (role === "master") {
         socket.emit("chooseRole", "master");
-        document.title = "Master View";
         document.getElementById("title").innerText = "Master Interface";
         const script = document.createElement("script");
         script.src = "master.js";
         document.body.appendChild(script);
       } else {
         socket.emit("chooseRole", "player");
-        document.title = "TV View";
-        document.getElementById("redAssociationsForm").style.display = 'none';
-        document.getElementById("blueAssociationsForm").style.display = 'none';
+        document.getElementById("redAssociationsForm").style.display = "none";
+        document.getElementById("blueAssociationsForm").style.display = "none";
         document.getElementById("title").innerText = "TV Interface";
         const script = document.createElement("script");
         script.src = "tv.js";
